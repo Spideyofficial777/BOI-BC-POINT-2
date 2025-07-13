@@ -8,13 +8,12 @@ services:
     rootDir: backend
     envVars:
       - key: MONGO_URL
-        sync: false  # You'll be prompted in the dashboard
-    healthCheckPath: /  # or your API's root
+        sync: false
+    healthCheckPath: /
 
   - name: my-react-frontend
     type: web
     runtime: static
-    plan: free
     buildCommand: npm install && npm run build
     staticPublishPath: build
     rootDir: frontend
