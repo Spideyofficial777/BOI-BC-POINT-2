@@ -1,0 +1,20 @@
+services:
+  - name: my-fastapi-backend
+    type: web
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port 10000
+    rootDir: backend
+    envVars:
+      - key: MONGO_URL
+        sync: false  # You'll be prompted in the dashboard
+    healthCheckPath: /  # or your API's root
+
+  - name: my-react-frontend
+    type: web
+    runtime: static
+    plan: free
+    buildCommand: npm install && npm run build
+    staticPublishPath: build
+    rootDir: frontend
