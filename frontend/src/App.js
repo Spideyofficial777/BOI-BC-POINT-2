@@ -35,6 +35,7 @@ function App() {
       <LanguageProvider>
         <div className="App">
           <BrowserRouter>
+            <AntiCopyProtection />
             <ScrollToTop />
             <Navbar />
             <Routes>
@@ -45,6 +46,7 @@ function App() {
               <Route path="/rules" element={<Rules />} />
             </Routes>
             <Footer />
+            <ScrollToTopButton />
           </BrowserRouter>
         </div>
       </LanguageProvider>
