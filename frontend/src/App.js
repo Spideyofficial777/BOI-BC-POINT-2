@@ -9,6 +9,8 @@ import "aos/dist/aos.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
+import ScrollToTopButton from "./components/ScrollToTopButton";
+import AntiCopyProtection from "./components/AntiCopyProtection";
 import LanguageProvider from "./context/LanguageContext";
 
 // Pages
