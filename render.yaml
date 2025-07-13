@@ -14,6 +14,6 @@ services:
   - name: my-react-frontend
     type: web
     runtime: static
-    buildCommand: npm install && npm run build
+    buildCommand: yarn install && yarn build
     staticPublishPath: build
-    rootDir: frontend
+    rootDir: frontend  
