@@ -83,7 +83,7 @@ async def shutdown_db_client():
 
 if __name__ == "__main__":
     uvicorn.run(
-        "main:app",
+        "server:app",
         host="0.0.0.0",     
         port=10000,         
         reload=False        
