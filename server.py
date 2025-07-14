@@ -10,7 +10,6 @@ from typing import List
 import uuid
 from datetime import datetime
 import uvicorn
-# from main import app 
 
 # Load environment variables
 load_dotenv()
@@ -26,23 +25,19 @@ db = client[db_name]
 app = FastAPI()
 api_router = APIRouter(prefix="/api")
 
-
 # Models
 class StatusCheck(BaseModel):
     id: str = Field(default_factory=lambda: str(uuid.uuid4()))
     client_name: str
     timestamp: datetime = Field(default_factory=datetime.utcnow)
 
-
 class StatusCheckCreate(BaseModel):
     client_name: str
 
-
-# Routes
+# API Routes
 @api_router.get("/")
-async def root():
-    return {"message": "Hello from Render!"}
-
+async def api_index():
+    return {"message": "Hello from Render API!"}
 
 @api_router.post("/status", response_model=StatusCheck)
 async def create_status_check(input: StatusCheckCreate):
@@ -50,17 +45,26 @@ async def create_status_check(input: StatusCheckCreate):
     await db.status_checks.insert_one(status_obj.dict())
     return status_obj
 
-
 @api_router.get("/status", response_model=List[StatusCheck])
 async def get_status_checks():
     status_checks = await db.status_checks.find().to_list(1000)
     return [StatusCheck(**item) for item in status_checks]
 
-
 # Include API router
 app.include_router(api_router)
 
-# Enable CORS
+# Root route for `/`
+@app.get("/")
+async def root_welcome():
+    return {
+        "message": "✅ BOI BC Point Backend is Live!",
+        "endpoints": [
+            "/api/",
+            "/api/status",
+        ]
+    }
+
+# CORS Middleware
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -76,15 +80,16 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-
+# MongoDB client shutdown
 @app.on_event("shutdown")
 async def shutdown_db_client():
     client.close()
 
+# Entry point
 if __name__ == "__main__":
     uvicorn.run(
         "server:app",
-        host="0.0.0.0",     
-        port=10000,         
-        reload=False        
+        host="0.0.0.0",
+        port=10000,
+        reload=False  # Set True only for local development
     )
