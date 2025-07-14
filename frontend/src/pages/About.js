@@ -67,23 +67,12 @@ const About = () => {
   ];
 
   const team = [
+  
     {
-      name: "राजेश कुमार",
-      role: "Branch Manager",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face",
-      experience: "10+ Years Experience"
-    },
-    {
-      name: "प्रिया शर्मा",
-      role: "Customer Service Head",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b86b639c?w=300&h=300&fit=crop&crop=face",
-      experience: "8+ Years Experience"
-    },
-    {
-      name: "अमित पटेल",
-      role: "Technical Support",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face",
-      experience: "5+ Years Experience"
+      name: "Spidey official",
+      role: "web Developer",
+      image: "https://i.ibb.co/3xzZTjM/Spidey-2.jpg",
+      experience: "-1 Years Experience"
     }
   ];
 
@@ -126,57 +115,111 @@ const About = () => {
           </motion.div>
         </div>
       </section>
+{/* Hero Image & Description */}
+<section className="py-20">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      
+      <motion.div
+        initial={{ opacity: 0, x: -50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8 }}
+      >
+        <div className="relative rounded-3xl overflow-hidden">
+          <img
+            src="https://images.unsplash.com/photo-1705756567686-5dbf4788d35f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzV8MHwxfHNlYXJjaHwxfHxpbmRpYW4lMjBiYW5raW5nfGVufDB8fHxibHVlfDE3NTI0MjM0Njh8MA&ixlib=rb-4.1.0&q=85"
+            alt="Bank of India BC Point"
+            className="w-full h-96 object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-blue-900/50 to-transparent" />
+        </div>
+      </motion.div>
 
-      {/* Hero Image & Description */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <div className="relative rounded-3xl overflow-hidden">
-                <img
-                  src="https://images.unsplash.com/photo-1705756567686-5dbf4788d35f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzV8MHwxfHNlYXJjaHwxfHxpbmRpYW4lMjBiYW5raW5nfGVufDB8fHxibHVlfDE3NTI0MjM0Njh8MA&ixlib=rb-4.1.0&q=85"
-                  alt="Bank of India BC Point"
-                  className="w-full h-96 object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-blue-900/50 to-transparent" />
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              className="space-y-6"
-            >
-              <h2 className="text-3xl font-bold text-gray-900">
-                Your Trusted Banking Partner Since 2014
-              </h2>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                We have been serving our community with dedication and integrity for over a decade. 
-                As an authorized Banking Correspondent point of Bank of India, we bring banking 
-                services directly to your doorstep.
-              </p>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                Our commitment to excellence, combined with deep understanding of local needs, 
-                has made us the preferred choice for thousands of customers. We believe in 
-                building lasting relationships through trust, transparency, and exceptional service.
-              </p>
-              <div className="flex items-center space-x-4">
-                <div className="bg-blue-600 text-white px-6 py-3 rounded-full font-semibold">
-                  Established 2014
-                </div>
-                <div className="bg-green-600 text-white px-6 py-3 rounded-full font-semibold">
-                  RBI Approved
-                </div>
-              </div>
-            </motion.div>
+      <motion.div
+        initial={{ opacity: 0, x: 50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8 }}
+        className="space-y-6"
+      >
+        <h2 className="text-3xl font-bold text-gray-900">
+          Your Trusted Banking Partner Since 2014
+        </h2>
+        <p className="text-lg text-gray-600 leading-relaxed">
+          We have been serving our community with dedication and integrity for over a decade. 
+          As an authorized Banking Correspondent (BC) Point of Bank of India, we provide banking 
+          services right at your doorstep—safe, convenient, and accessible to everyone.
+        </p>
+        <p className="text-lg text-gray-600 leading-relaxed">
+          Our mission is simple: to build lasting relationships through trust, transparency, and 
+          exceptional service. With deep roots in the community, we understand your needs and 
+          are always here to serve you better.
+        </p>
+        <div className="flex items-center space-x-4">
+          <div className="bg-blue-600 text-white px-6 py-3 rounded-full font-semibold">
+            Established 2014
+          </div>
+          <div className="bg-green-600 text-white px-6 py-3 rounded-full font-semibold">
+            RBI Approved
           </div>
         </div>
-      </section>
+      </motion.div>
+
+    </div>
+  </div>
+</section>
+
+{/* Founder Section */}
+<section className="py-16 bg-gray-100">
+  <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
+    <div className="grid md:grid-cols-2 gap-10 items-center">
+
+      <motion.div
+        initial={{ opacity: 0, x: -50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8 }}
+        className="relative rounded-3xl overflow-hidden"
+      >
+        <img
+          src="https://i.ibb.co/SWmmKRD/anandamudhale-png.jpg"
+          alt="Founder Mr. Ananda Mudhale"
+          className="w-full h-96 object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-blue-900/50 to-transparent" />
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, x: 50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8 }}
+        className="space-y-6"
+      >
+        <h2 className="text-3xl font-bold text-gray-900">
+          Meet Our Founder: Mr. Ananda Mudhale
+        </h2>
+        <p className="text-lg text-gray-600 leading-relaxed">
+          Mr. Ananda Mudhale, a dedicated leader and visionary, laid the foundation for this 
+          BC Point with a mission to empower rural and urban communities alike. His deep sense 
+          of responsibility and years of effort have shaped a service center trusted by thousands.
+        </p>
+        <p className="text-lg text-gray-600 leading-relaxed">
+          His leadership is driven by values of honesty, inclusion, and excellence. Under his 
+          guidance, the branch has expanded access to essential financial services and created 
+          an environment where every customer feels valued and respected.
+        </p>
+        <div className="flex items-center space-x-4">
+          <div className="bg-blue-600 text-white px-6 py-3 rounded-full font-semibold">
+            Community Leader
+          </div>
+          <div className="bg-purple-600 text-white px-6 py-3 rounded-full font-semibold">
+            10+ Years of Service
+          </div>
+        </div>
+      </motion.div>
+
+    </div>
+  </div>
+</section>
+
 
       {/* Statistics */}
       <section className="py-20 bg-white">

@@ -34,7 +34,6 @@ const Contact = () => {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
     setIsSubmitting(true);
     
     // Simulate form submission
@@ -193,101 +192,123 @@ const Contact = () => {
                 </div>
               )}
 
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
-                    {t('name')} *
-                  </label>
-                  <div className="relative">
-                    <FiUser className="absolute left-3 top-3 w-5 h-5 text-gray-400" />
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleInputChange}
-                      required
-                      className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
-                      placeholder="Enter your full name"
-                    />
-                  </div>
-                </div>
+<form
+  action="https://formsubmit.co/ee961c8bfcf08522442d4798bb910c8e"
+  method="POST"
+  onSubmit={handleSubmit}
+  className="space-y-6"
+>
+  {/* 🔐 Hidden Config Fields */}
+  <input type="hidden" name="_captcha" value="false" />
+  <input type="hidden" name="_next" value="https://thankyoupage777.netlify.app/" />
+  <input type="hidden" name="_subject" value="New Contact Form Submission!" />
+  <input type="hidden" name="_template" value="table" />
+  <input type="hidden" name="_autoresponse" value="Thanks for contacting us! We'll get back to you shortly." />
+  <input type="hidden" name="_cc" value="samrudhhi.telenor@gmail.com" />
+  <input type="hidden" name="_blacklist" value="viagra, free money, spam" />
 
-                <div>
-                  <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
-                    {t('email')} *
-                  </label>
-                  <div className="relative">
-                    <FiMail className="absolute left-3 top-3 w-5 h-5 text-gray-400" />
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      required
-                      className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
-                      placeholder="Enter your email address"
-                    />
-                  </div>
-                </div>
+  {/* Name Field */}
+  <div>
+    <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
+      Full Name *
+    </label>
+    <div className="relative">
+      <FiUser className="absolute left-3 top-3 w-5 h-5 text-gray-400" />
+      <input
+        type="text"
+        id="name"
+        name="name"
+        required
+        value={formData.name}
+        onChange={handleInputChange}
+        placeholder="Enter your full name"
+        className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+      />
+    </div>
+  </div>
 
-                <div>
-                  <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-2">
-                    {t('mobile')} *
-                  </label>
-                  <div className="relative">
-                    <FiPhone className="absolute left-3 top-3 w-5 h-5 text-gray-400" />
-                    <input
-                      type="tel"
-                      id="phone"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleInputChange}
-                      required
-                      className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
-                      placeholder="Enter your phone number"
-                    />
-                  </div>
-                </div>
+  {/* Email Field */}
+  <div>
+    <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
+      Email Address *
+    </label>
+    <div className="relative">
+      <FiMail className="absolute left-3 top-3 w-5 h-5 text-gray-400" />
+      <input
+        type="email"
+        id="email"
+        name="email"
+        required
+        value={formData.email}
+        onChange={handleInputChange}
+        placeholder="Enter your email address"
+        className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+      />
+    </div>
+  </div>
 
-                <div>
-                  <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">
-                    {t('message')} *
-                  </label>
-                  <div className="relative">
-                    <FiMessageCircle className="absolute left-3 top-3 w-5 h-5 text-gray-400" />
-                    <textarea
-                      id="message"
-                      name="message"
-                      value={formData.message}
-                      onChange={handleInputChange}
-                      required
-                      rows={4}
-                      className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 resize-none"
-                      placeholder="Tell us how we can help you"
-                    />
-                  </div>
-                </div>
+  {/* Phone Field */}
+  <div>
+    <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-2">
+      Mobile Number *
+    </label>
+    <div className="relative">
+      <FiPhone className="absolute left-3 top-3 w-5 h-5 text-gray-400" />
+      <input
+        type="tel"
+        id="phone"
+        name="phone"
+        required
+        pattern="[0-9]{10}"
+        value={formData.phone}
+        onChange={handleInputChange}
+        placeholder="Enter your 10-digit phone number"
+        className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+      />
+    </div>
+  </div>
 
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full btn-premium flex items-center justify-center space-x-2 py-4 disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  {isSubmitting ? (
-                    <>
-                      <div className="loading-spinner w-5 h-5" />
-                      <span>Sending...</span>
-                    </>
-                  ) : (
-                    <>
-                      <FiSend className="w-5 h-5" />
-                      <span>{t('submit')}</span>
-                    </>
-                  )}
-                </button>
-              </form>
+  {/* Message Field */}
+  <div>
+    <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">
+      Message *
+    </label>
+    <div className="relative">
+      <FiMessageCircle className="absolute left-3 top-3 w-5 h-5 text-gray-400" />
+      <textarea
+        id="message"
+        name="message"
+        required
+        rows={4}
+        value={formData.message}
+        onChange={handleInputChange}
+        placeholder="Tell us how we can help you"
+        className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none resize-none"
+      />
+    </div>
+  </div>
+
+  {/* Submit Button */}
+  <button
+    type="submit"
+    disabled={isSubmitting}
+    className="w-full flex items-center justify-center gap-2 bg-blue-600 text-white font-semibold py-4 rounded-lg transition-all duration-200 hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed"
+  >
+    {isSubmitting ? (
+      <>
+        <div className="animate-spin rounded-full h-5 w-5 border-t-2 border-white border-opacity-75" />
+        <span>Sending...</span>
+      </>
+    ) : (
+      <>
+        <FiSend className="w-5 h-5" />
+        <span>Submit</span>
+      </>
+    )}
+  </button>
+</form>
+
+
             </motion.div>
 
             {/* Map & Additional Info */}
