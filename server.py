@@ -10,7 +10,7 @@ from typing import List
 import uuid
 from datetime import datetime
 import uvicorn
-from main import app 
+# from main import app 
 
 # Load environment variables
 load_dotenv()
